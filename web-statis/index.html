@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PBP Platform minggu ke 3</title>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Mencegah reload halaman
+            
+            // Ambil nilai input
+            let email = document.getElementById("email").value;
+            
+            // Tampilkan di konsol atau bisa diubah menjadi alert
+            console.log("Form Submitted! Email:", email);
+            alert("Form berhasil dikirim! Email: " + email);
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <img src="sample.png" alt="Contoh Gambar" width="300" height="200">
+    </div>
+    <div>
+        <table border="1">
+            <tr>
+              <th>Nama</th>
+              <th>Usia</th>
+              <th>Kota</th>
+            </tr>
+            <tr>
+              <td>Andi</td>
+              <td>25</td>
+              <td>Jakarta</td>
+            </tr>
+            <tr>
+              <td>Budi</td>
+              <td>30</td>
+              <td>Bandung</td>
+            </tr>
+          </table>
+    </div>
+    <div>
+        <h2>Formulir</h2>
+        <form onsubmit="handleSubmit(event)">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" disabled><br><br>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+    
+            <input type="submit" value="Kirim">
+        </form>
+    </div>
+</body>
+</html>
