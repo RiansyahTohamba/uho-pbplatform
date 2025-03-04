@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form dengan Select, Radio, dan Checkbox</title>
+</head>
+<body>
+
+    <h2>Form Pilihan</h2>
+
+    <!-- Dropdown (Select Option) -->
+    <label for="dropdown">Pilih Kota:</label>
+    <select id="dropdown"></select>
+
+    <br><br>
+
+    <!-- Radio Button -->
+    <label>Pilih Jenis Kelamin:</label><br>
+    <input type="radio" name="gender" value="Laki-laki"> Laki-laki <br>
+    <input type="radio" name="gender" value="Perempuan"> Perempuan <br>
+
+    <br>
+
+    <!-- Checkbox -->
+    <label>Hobi:</label><br>
+    <input type="checkbox" name="hobi" value="Membaca"> Membaca <br>
+    <input type="checkbox" name="hobi" value="Olahraga"> Olahraga <br>
+    <input type="checkbox" name="hobi" value="Menulis"> Menulis <br>
+
+    <br>
+    
+    <button onclick="tampilkanHasil()">Tampilkan Pilihan</button>
+
+    <h3>Hasil:</h3>
+    <p id="hasil"></p>
+
+    <script>
+        // Data untuk select option
+        const kotaArray = ["Kendari","Aceh", "Jakarta", "Surabaya", "Bandung", "Yogyakarta", "Bali"];
+        
+        // Mengisi dropdown dari array
+        const dropdown = document.getElementById("dropdown");
+        kotaArray.forEach(kota => {
+            let option = document.createElement("option");
+            option.value = kota;
+            option.textContent = kota;
+            dropdown.appendChild(option);
+        });
+
+        function tampilkanHasil() {
+            // Ambil nilai dari dropdown
+            let kotaTerpilih = dropdown.value;
+
+            // Ambil nilai radio button yang dipilih
+            let gender = document.querySelector('input[name="gender"]:checked');
+            let genderTerpilih = gender ? gender.value : "Belum dipilih";
+
+            // Ambil nilai checkbox yang dipilih
+            let hobiTerpilih = [];
+            document.querySelectorAll('input[name="hobi"]:checked').forEach(checkbox => {
+                hobiTerpilih.push(checkbox.value);
+            });
+            let hobiText = hobiTerpilih.length > 0 ? hobiTerpilih.join(", ") : "Tidak ada hobi yang dipilih";
+
+            // Tampilkan hasil di paragraf
+            document.getElementById("hasil").innerHTML = `
+                Kota: ${kotaTerpilih} <br>
+                Jenis Kelamin: ${genderTerpilih} <br>
+                Hobi: ${hobiText}
+            `;
+        }
+    </script>
+
+</body>
+</html>
