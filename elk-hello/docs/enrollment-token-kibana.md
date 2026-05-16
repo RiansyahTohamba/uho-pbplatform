@@ -1,0 +1,13 @@
+sudo /usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s kibana
+
+eyJ2ZXIiOiI4LjE0LjAiLCJhZHIiOlsiMTAuMjU1LjI1NS4yNTQ6OTIwMCJdLCJmZ3IiOiIyYTA0ZDc3ODM2ZGI5YzgzMzZiZmNjNjk1ODI5YjM4MGQ4NTVjNTNjZmY4NjhhZTRmOGU2MGI4MTQxOTA5MWY3Iiwia2V5IjoidkwxNkw1NEJTclNTcnAxTEFYeEs6a3g0STZpcmU3TE01aWpzdFVnc0FjUSJ9
+
+
+ambil kode verifikasi kibana
+$ sudo /usr/share/kibana/bin/kibana-verification-code
+Your verification code is:  839 813
+
+setelah itu setup elastic akan berlangsung
+
+uname=elastic
+password=hNMXDW4JjWMod13iSdec

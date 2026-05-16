@@ -1,0 +1,8 @@
+filebeat.inputs:
+  - type: filestream
+    enabled: true
+    paths:
+      - ~/spmb/uhopbplatform/elk-hello/app.log
+
+output.logstash:
+  hosts: ["localhost:5044"]
